@@ -1,0 +1,196 @@
+/* ---------- Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f2f4f8;
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: #1f3a5f;
+  color: #fff;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0;
+}
+
+/* ---------- Navigation (Flexbox) ---------- */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #fff;
+  color: #1f3a5f;
+}
+
+/* ---------- Main and sections ---------- */
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Features list (CSS Grid cards) ---------- */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.features li {
+  background-color: #eef3fa;
+  border: 1px solid #c9d6e8;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* ---------- Shortcuts table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #999;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #1f3a5f;
+  color: #fff;
+}
+
+tr:nth-child(even) td {
+  background-color: #f6f8fb;
+}
+
+/* ---------- Feedback form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aab4c3;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #1f3a5f;
+  border-color: #1f3a5f;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ---------- Buttons ---------- */
+button,
+input[type="submit"] {
+  width: auto;
+  align-self: flex-start;
+  background-color: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #2f5a94;
+  transform: translateY(-2px);
+}
+
+/* ---------- Notes list and footer ---------- */
+#notes-list {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  section {
+    padding: 14px;
+  }
+}
