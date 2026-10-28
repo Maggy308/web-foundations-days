@@ -1,0 +1,7 @@
+# Day 8 Reflection
+
+The most difficult concept in the course was understanding how to design for concurrency without losing correctness. It is easy to describe a seat as “available” on a page, but many users can see that same state and try to buy it at once. I worked through this by tracing the full hold-and-payment sequence, identifying where two requests could race, and assigning the final decision to a database transaction rather than the browser or cache. Row locks, conditional updates, idempotency keys, and unique constraints each solve a different part of the problem.
+
+For my TicketHub capstone, I would improve the operational detail around the waiting room and payment failures. The design explains how users are admitted and how successful payment confirms tickets, but a next version could define exact admission limits, queue-token expiry, payment timeout reconciliation, and dashboards for a live sale. I would also validate the traffic assumptions with a load test instead of relying only on averages, because real demand arrives in uneven bursts.
+
+Next, I want to learn practical load testing and performance monitoring. I would like to simulate thousands of concurrent seat-hold requests, measure p95 and p99 latency, and observe database lock contention under pressure. I also want to study payment-provider webhooks and distributed-system failure handling in more depth. These skills would help me turn a written architecture into a reliable service and verify that its correctness and fairness goals hold under real traffic.
